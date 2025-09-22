@@ -1,0 +1,35 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Caso de Uso - Autenticação">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="cliente" value="Cliente" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="80" y="200" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="agricultor" value="Agricultor" style="shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="80" y="400" width="40" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="login" value="Login" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="300" y="220" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="cadastro" value="Cadastro" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="300" y="340" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="recuperar" value="Recuperar Senha" style="ellipse;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="300" y="460" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cli-login" edge="1" parent="1" source="cliente" target="login"/>
+        <mxCell id="cli-cadastro" edge="1" parent="1" source="cliente" target="cadastro"/>
+        <mxCell id="cli-recuperar" edge="1" parent="1" source="cliente" target="recuperar"/>
+
+        <mxCell id="agri-login" edge="1" parent="1" source="agricultor" target="login"/>
+        <mxCell id="agri-cadastro" edge="1" parent="1" source="agricultor" target="cadastro"/>
+        <mxCell id="agri-recuperar" edge="1" parent="1" source="agricultor" target="recuperar"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
