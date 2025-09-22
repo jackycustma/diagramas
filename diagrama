@@ -1,76 +1,242 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Diagrama de Sequência - Login" id="login-diagram">
-    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <!-- Diagrama 1: Caso de Uso - Autenticação -->
+  <diagram name="CasoDeUso_Autenticacao" id="usecase-auth">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <!-- Ator Usuário -->
-        <mxCell id="usuario" value="Usuário" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+        <!-- Ator Cliente -->
+        <mxCell id="actor_cliente" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Ator Agricultor -->
+        <mxCell id="actor_agricultor" value="Agricultor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Sistema (casos de uso) -->
+        <mxCell id="sistema" value="Feira Online" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;strokeColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="540" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- Casos de Uso -->
+        <mxCell id="uc_login" value="Login / Logout" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_cadastrar" value="Cadastrar Conta" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="70" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_autenticar" value="Recuperar Senha" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Associações (linhas) -->
+        <mxCell id="assoc1" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" edge="1" parent="1" source="actor_cliente" target="uc_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="assoc2" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" edge="1" parent="1" source="actor_cliente" target="uc_cadastrar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="assoc3" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" edge="1" parent="1" source="actor_agricultor" target="uc_cadastrar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- Diagrama 2: Caso de Uso - Compra -->
+  <diagram name="CasoDeUso_Compra" id="usecase-purchase">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="actor_cliente2" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actor_agricultor2" value="Agricultor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="40" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sistema2" value="Feira Online" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;strokeColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="540" height="300" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_visualizar" value="Visualizar produtos" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_adicionar" value="Adicionar ao carrinho" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_finalizar" value="Finalizar pedido" style="shape=ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="140" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="assoc_v1" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" edge="1" parent="1" source="actor_cliente2" target="uc_visualizar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc_v2" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" edge="1" parent="1" source="actor_cliente2" target="uc_adicionar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc_v3" style="edgeStyle=orthogonalEdgeStyle;endArrow=none;html=1;" edge="1" parent="1" source="actor_agricultor2" target="uc_finalizar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- Diagrama 3: Sequência - Login -->
+  <diagram name="Sequencia_Login" id="seq-login">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="u" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
           <mxGeometry x="60" y="20" width="40" height="80" as="geometry" />
         </mxCell>
 
-        <!-- Interface de Login -->
-        <mxCell id="interface" value="Interface de Login" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="200" y="20" width="140" height="50" as="geometry" />
+        <mxCell id="ui" value="App (Interface)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="20" width="160" height="60" as="geometry" />
         </mxCell>
 
-        <!-- Controlador de Autenticação -->
-        <mxCell id="controlador" value="Controlador de Autenticação" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="400" y="20" width="200" height="50" as="geometry" />
+        <mxCell id="ctrl" value="Auth Controller" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="20" width="180" height="60" as="geometry" />
         </mxCell>
 
-        <!-- Banco de Dados de Usuários -->
-        <mxCell id="banco" value="Banco de Dados de Usuários" style="shape=database;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="20" width="140" height="60" as="geometry" />
+        <mxCell id="db" value="DB Users" style="shape=database;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="20" width="140" height="60" as="geometry" />
         </mxCell>
 
-        <!-- Lifelines (linhas de vida) -->
-        <mxCell id="lifeline_usuario" style="shape=line;dashed=1;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="100" width="0" height="600" as="geometry" />
+        <!-- Lifelines -->
+        <mxCell id="ll_u" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="80" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_ui" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="300" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_ctrl" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="550" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_db" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="790" y="120" width="0" height="520" as="geometry" /></mxCell>
+
+        <!-- Messages -->
+        <mxCell id="m1" value="Informar e-mail e senha" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="u" target="ui"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m2" value="Enviar credenciais" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="ui" target="ctrl"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m3" value="Verificar credenciais" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="ctrl" target="db"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m4" value="Retornar resultado (ok/erro)" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;" edge="1" parent="1" source="db" target="ctrl"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m5" value="Autorização / Erro" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="ctrl" target="ui"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="m6" value="Redirecionar / Exibir erro" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="ui" target="u"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- Diagrama 4: Sequência - Finalizar Pedido -->
+  <diagram name="Sequencia_FinalizarPedido" id="seq-purchase">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="c" value="Cliente" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1"><mxGeometry x="60" y="20" width="40" height="80" as="geometry" /></mxCell>
+        <mxCell id="app" value="App" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="200" y="20" width="160" height="60" as="geometry" /></mxCell>
+        <mxCell id="api" value="API" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="420" y="20" width="160" height="60" as="geometry" /></mxCell>
+        <mxCell id="stock" value="Serviço Estoque" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="640" y="20" width="160" height="60" as="geometry" /></mxCell>
+        <mxCell id="orders" value="DB Pedidos" style="shape=database;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="880" y="20" width="140" height="60" as="geometry" /></mxCell>
+        <mxCell id="notif" value="Notificação -> Agricultor" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="1100" y="20" width="160" height="60" as="geometry" /></mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="ll_c" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="80" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_app" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="280" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_api" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="500" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_stock" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="720" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_orders" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="940" y="120" width="0" height="520" as="geometry" /></mxCell>
+        <mxCell id="ll_notif" style="shape=line;dashed=1;" vertex="1" parent="1"><mxGeometry x="1160" y="120" width="0" height="520" as="geometry" /></mxCell>
+
+        <!-- Messages -->
+        <mxCell id="p1" value="Checkout" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="c" target="app"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p2" value="Enviar pedido" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="app" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p3" value="Verificar estoque" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="api" target="stock"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p4" value="Gravar pedido" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="api" target="orders"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p5" value="Atualizar estoque" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="stock" target="orders"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p6" value="Notificar agricultor" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="api" target="notif"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p7" value="Retornar sucesso" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;dashed=1;html=1;" edge="1" parent="1" source="orders" target="api"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p8" value="Confirmar p/ cliente" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="api" target="app"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="p9" value="Mostrar confirmação" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;html=1;" edge="1" parent="1" source="app" target="c"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <!-- Diagrama 5: Atividade - Fluxo de Compra -->
+  <diagram name="Atividade_Compra" id="act-purchase">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Start -->
+        <mxCell id="start" value="Start" style="shape=ellipse;html=1;fillColor=#6FBF73;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="40" height="40" as="geometry" />
         </mxCell>
 
-        <mxCell id="lifeline_interface" style="shape=line;dashed=1;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="100" width="0" height="600" as="geometry" />
+        <!-- Activities -->
+        <mxCell id="a1" value="Visualizar produtos" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="36" width="180" height="50" as="geometry" />
         </mxCell>
 
-        <mxCell id="lifeline_controlador" style="shape=line;dashed=1;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="500" y="100" width="0" height="600" as="geometry" />
+        <mxCell id="a2" value="Adicionar ao carrinho" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="36" width="180" height="50" as="geometry" />
         </mxCell>
 
-        <mxCell id="lifeline_banco" style="shape=line;dashed=1;strokeWidth=1;" vertex="1" parent="1">
-          <mxGeometry x="750" y="100" width="0" height="600" as="geometry" />
+        <mxCell id="a3" value="Finalizar pedido" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="36" width="180" height="50" as="geometry" />
         </mxCell>
 
-        <!-- Mensagens de sequência -->
-        <mxCell id="msg1" value="Informar e-mail e senha" style="endArrow=block;html=1;" edge="1" parent="1" source="usuario" target="interface">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="a4" value="Aguardar confirmação do agricultor" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="36" width="260" height="50" as="geometry" />
         </mxCell>
 
-        <mxCell id="msg2" value="Enviar credenciais" style="endArrow=block;html=1;" edge="1" parent="1" source="interface" target="controlador">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="end" value="End" style="shape=ellipse;html=1;fillColor=#F44336;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="40" width="40" height="40" as="geometry" />
         </mxCell>
 
-        <mxCell id="msg3" value="Verificar credenciais" style="endArrow=block;html=1;" edge="1" parent="1" source="controlador" target="banco">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
+        <!-- Flows (edges) -->
+        <mxCell id="f1" edge="1" source="start" target="a1" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f2" edge="1" source="a1" target="a2" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f3" edge="1" source="a2" target="a3" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f4" edge="1" source="a3" target="a4" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="f5" edge="1" source="a4" target="end" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
 
-        <mxCell id="msg4" value="Resultado da validação" style="endArrow=open;dashed=1;html=1;" edge="1" parent="1" source="banco" target="controlador">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 
-        <mxCell id="msg5" value="Autorização / Erro" style="endArrow=block;html=1;" edge="1" parent="1" source="controlador" target="interface">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
+  <!-- Diagrama 6: Atividade - Fluxo de Cadastro de Produto -->
+  <diagram name="Atividade_CadastroProduto" id="act-product">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
 
-        <mxCell id="msg6" value="Redirecionar / Exibir erro" style="endArrow=block;html=1;" edge="1" parent="1" source="interface" target="usuario">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
+        <mxCell id="sstart" value="Start" style="shape=ellipse;html=1;fillColor=#6FBF73;" vertex="1" parent="1"><mxGeometry x="120" y="40" width="40" height="40" as="geometry" /></mxCell>
+        <mxCell id="p1a" value="Entrar como Agricultor" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1"><mxGeometry x="200" y="36" width="220" height="50" as="geometry" /></mxCell>
+        <mxCell id="p2a" value="Preencher dados do produto" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1"><mxGeometry x="460" y="36" width="220" height="50" as="geometry" /></mxCell>
+        <mxCell id="p3a" value="Validar estoque/preço" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1"><mxGeometry x="740" y="36" width="220" height="50" as="geometry" /></mxCell>
+        <mxCell id="p4a" value="Salvar produto" style="shape=rectangle;rounded=1;html=1;" vertex="1" parent="1"><mxGeometry x="1020" y="36" width="180" height="50" as="geometry" /></mxCell>
+        <mxCell id="eend" value="End" style="shape=ellipse;html=1;fillColor=#F44336;" vertex="1" parent="1"><mxGeometry x="1240" y="40" width="40" height="40" as="geometry" /></mxCell>
 
-        <!-- Nota de decisão -->
-        <mxCell id="decisao" value="[Se credenciais válidas / inválidas]" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
-          <mxGeometry x="480" y="300" width="180" height="60" as="geometry" />
-        </mxCell>
+        <mxCell id="ff1" edge="1" source="sstart" target="p1a" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ff2" edge="1" source="p1a" target="p2a" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ff3" edge="1" source="p2a" target="p3a" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ff4" edge="1" source="p3a" target="p4a" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ff5" edge="1" source="p4a" target="eend" style="endArrow=block;html=1;"><mxGeometry relative="1" as="geometry" /></mxCell>
 
       </root>
     </mxGraphModel>
