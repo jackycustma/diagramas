@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Sequência - Finalizar Pedido">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="cliente" value="Cliente" style="shape=umlLifeline;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="80" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="app" value="App" style="shape=umlLifeline;" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="80" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="API" style="shape=umlLifeline;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="80" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="estoque" value="Estoque" style="shape=umlLifeline;" vertex="1" parent="1">
+          <mxGeometry x="480" y="40" width="100" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="DB Pedidos" style="shape=umlLifeline;" vertex="1" parent="1">
+          <mxGeometry x="640" y="40" width="100" height="400" as="geometry"/>
+        </mxCell>
+        <mxCell id="agri" value="Agricultor" style="shape=umlLifeline;" vertex="1" parent="1">
+          <mxGeometry x="800" y="40" width="100" height="400" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m1" value="inicia checkout" edge="1" parent="1" source="cliente" target="app"/>
+        <mxCell id="m2" value="enviar pedido" edge="1" parent="1" source="app" target="api"/>
+        <mxCell id="m3" value="verificar estoque" edge="1" parent="1" source="api" target="estoque"/>
+        <mxCell id="m4" value="gravar pedido" edge="1" parent="1" source="api" target="db"/>
+        <mxCell id="m5" value="notificar agricultor" edge="1" parent="1" source="api" target="agri"/>
+        <mxCell id="m6" value="confirmação" edge="1" parent="1" source="api" target="app"/>
+        <mxCell id="m7" value="mostrar pedido concluído" edge="1" parent="1" source="app" target="cliente"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
